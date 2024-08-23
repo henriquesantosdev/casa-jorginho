@@ -6,13 +6,16 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('/auth')->group(function () {
-    Route::post('/login', [AuthController::class, 'login']);
-    Route::get('/logout', [AuthController::class, 'logout']);
+    Route::get('/login', [AuthController::class, 'login']);
 });
 
 Route::post('/users', [UserController::class, 'store']);
 
 Route::middleware('auth:sanctum')->group(function () {
+    Route::prefix('/auth')->group(function () {
+        Route::get('/logout', [AuthController::class, 'logout']);
+    });
+    
     Route::get('/users', [UserController::class, 'index']);
     Route::get('/users/{user}', [UserController::class, 'show']);
     Route::put('/users/{user}', [UserController::class, 'update']);

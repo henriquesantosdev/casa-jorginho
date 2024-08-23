@@ -16,7 +16,7 @@ class AuthController extends Controller
     {
         if (Auth::attempt($request->only('cpf', 'password'))) {
             return $this->response('Authorized', 200, [
-                'token' => $request->user()->createToken('invoice')->plainTextToken
+                'token' => $request->user()->createToken('casaJorginhoAccessToken=**&9887JHUjnjn')->plainTextToken
             ]);
         }
         return $this->response('Not authorized', 403);
