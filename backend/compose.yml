@@ -1,0 +1,18 @@
+version: '3.8'
+
+networks:
+  casa_jorginho_network:
+    driver: bridge
+
+services:
+  mysql:
+    image: mysql
+    container_name: casa_jorginho_mysql
+    restart: unless-stopped
+    networks:
+      - casa_jorginho_network
+    environment:
+      MYSQL_DATABASE: casa_jorginho_db
+      MYSQL_ROOT_PASSWORD: root
+    ports:
+      - "3306:3306"
