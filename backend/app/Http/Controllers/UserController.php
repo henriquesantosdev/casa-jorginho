@@ -14,7 +14,7 @@ class UserController extends Controller
 
     public function index()
     {
-        return User::all();
+        return User::with('patients')->get();
     }
 
     public function store(Request $request)
@@ -49,7 +49,7 @@ class UserController extends Controller
     public function show(User $user)
     {
         if ($user) {
-            return $this->response('User found', 200, $user);
+            return $this->response('User found', 200, $user->load('patients'));
         }
 
         return $this->error('Patient not found', 404);
