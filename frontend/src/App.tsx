@@ -1,11 +1,9 @@
-function App() {
+export default function App() {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">
-        Hello world!
-      </h1>
-    </>
+    <main className="bg-loginBackground h-[100%] bg-cover p-8">
+      <div className="w-full h-screen bg-slate-100 p-6 rounded-xl">
+        Bem Vindo, Dr. John Doe
+      </div>
+    </main>
   )
 }
-
-export default App
