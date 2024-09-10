@@ -72,7 +72,7 @@ export function AuthLogin() {
                     </div>
 
                     <div>
-                        <button className="w-full focus:outline-none size-6 text-white h-14 rounded-xl hover:bg-blue-600 bg-blue-700">
+                        <button className="w-full text-white h-14 rounded-xl hover:bg-blue-600 bg-blue-700">
                             Entrar
                         </button>
                     </div>
